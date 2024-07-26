@@ -916,6 +916,19 @@ declare namespace google.payments.api {
         merchantName?: string | undefined;
 
         /**
+         * The fully qualified domain of the requesting merchant.
+         * This string must be the hostname of the merchant's website where the checkout is initiated.
+         * Required when a site serves a Google Pay payment button and requests payment information on
+         * behalf of another site, typically through a Hosted checkout integration.
+         *
+         * Caution: This property shouldn't be populated for a merchant who registers their own Google merchant ID.
+         * This includes Google Pay functionality directly on its own domains.
+         *
+         * This field is optional.
+         */
+        merchantOrigin?: string | undefined;
+
+        /**
          * The info of the software used by merchants to integrate with GPay.
          *
          * This field is optional and its values may be set by software
